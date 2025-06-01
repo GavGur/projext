@@ -1,0 +1,148 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Порошков</title>
+    <link rel="stylesheet" href="{% static 'style1.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo"><h1><i class="fas fa-tint"></i> Магазин Порошков</h1></a>
+            <nav>
+                <ul>
+                     <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                    {% if username %}
+                        <li>{{ username }}</li>
+                    {% else %}
+                    <li><a href="{% url 'vhod' %}"> Вход</a>/<a href="{% url 'register' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2>Каталог порошков</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=12f7a42b44bd9136a4edca12dd2506fd_l-4599018-images-thumbs&n=13" alt="Порошок для стирки">
+                        <h3>Порошок "Свежесть"</h3>
+                        <p>Идеально подходит для всех типов тканей. Придает белью свежий аромат.</p>
+                        <span class="price">180₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="https://akvarel-shop.ru/images/detailed/71/177552.jpg" alt="Порошок для посуды">
+                        <h3>Порошок "Блеск"</h3>
+                        <p>Безопасное и эффективное средство для мытья посуды. Легко смывается.</p>
+                        <span class="price">150₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=f171c0275a97904d77ac75a2f635d7f44b34b258-2427501-images-thumbs&n=13" alt="Порошок для уборки">
+                        <h3>Порошок "Чистый дом"</h3>
+                        <p>Мощное средство для удаления самых стойких загрязнений. Подходит для всего.</p>
+                        <span class="price">220₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.100sp.ru/pictures/239943357" alt="Отбеливающий порошок">
+                        <h3>Порошок "Белизна"</h3>
+                        <p>Удаляет пятна и придает белью белизну. Для всех типов белых тканей.</p>
+                        <span class="price">190₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=ba279bae0d2ae8030fa0b1a0f55a0a17d5887e9b-11432272-images-thumbs&n=13" alt="Отбеливающий порошок">
+                        <h3>Порошок "DOSIA"</h3>
+                        <p>Уничтожает малейшие загрязнения. Рекомендуются для всех типов тканей</p>
+                        <span class="price">169₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=e2d01a450ece0bd01db47b005381b73429faaab1-5221613-images-thumbs&n=13" alt="Отбеливающий порошок">
+                        <h3>Порошок "МИФ"</h3>
+                        <p>Легендарная темка, мечта любой взрослой женщины</p>
+                        <span class="price">136₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=41a0b8b229362d17820013b6e311b628b4b6efc1-10972138-images-thumbs&n=13" alt="Порошок для стирки">
+                        <h3>Порошок "Чайка"</h3>
+                        <p>Пахнет араматом моря. Напоминает о славных деньках</p>
+                        <span class="price">154₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=bcba1a4862a3b277e3a6dfab1fc5807c9afdf464-4591219-images-thumbs&n=13" alt="Порошок для посуды">
+                        <h3>Порошок "АБЭЦЭ"</h3>
+                        <p>Какая-то дичь на английском. Я не знаю перевод.</p>
+                        <span class="price">111₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://donetsk.sidex.ru/images_offers/1070/1070206/stiralnii_porosh_1.jpg" alt="Порошок для уборки">
+                        <h3>Порошок "Чистый дом"</h3>
+                        <p>Мощное средство для удаления самых стойких загрязнений. Подходит для разных поверхностей.</p>
+                        <span class="price">220₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=69333d324b65e09fd0b881233749799ee419d552-10995423-images-thumbs&n=13" alt="Отбеливающий порошок">
+                        <h3>Порошок "Бимакс"</h3>
+                        <p>Один из самых лучших порошков современности. Просто лучший.</p>
+                        <span class="price">189₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=24dde2cf74ac715e21398c3f4c4ec48b447d8c37-12569860-images-thumbs&n=13" alt="Отбеливающий порошок">
+                        <h3>Порошок "обычный"</h3>
+                        <p>Ну за свою цену очень хороший продукт. Мои друзья используют его.</p>
+                        <span class="price">52₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=4a02f8559f1d49048b25a095ec572bcea91dbba7-4557590-images-thumbs&n=13" alt="Отбеливающий порошок">
+                        <h3>Порошок "Мага"</h3>
+                        <p>Сияй Мага, и Мага сиял, в нашей чайхане никто так не сиял как он.</p>
+                        <span class="price">136₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </div>
+                <h1>Введите секретный код:</h1>
+<input type="text" id="secretCode">
+<button onclick="checkCode()">Проверить</button>
+
+<script>
+function checkCode() {
+  const code = document.getElementById("secretCode").value;
+  const correctCode = "narkotiki"; // Замените на ваш секретный код
+
+  if (code === correctCode) {
+    window.location.href = "index3.html"; // Замените на URL вашей целевой страницы
+  } else {
+    alert("Неверный код!");
+  }
+}
+</script>
+            </div>
+        </section>
+
+
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Магазин Порошков</p>
+        </div>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

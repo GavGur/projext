@@ -1,0 +1,21 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% if products %}
+    <div class="product-container">
+      {% for card in products %}
+        <div class="card">
+          <h1>{{ card.title }}</h1>
+          <p>{{ card.price }} $</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <h1>Весь порошок скурили</h1>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,128 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Порошков</title>
+    <link rel="stylesheet" href="{% static 'styles.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-tint"></i> Магазин Порошков</h1></a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                    {% if username %}
+                        <li>{{ username }}</li>
+                    {% else %}
+                    <li><a href="{% url 'vhod' %}"> Вход</a>/<a href="{% url 'register' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Чистота и свежесть в каждом доме!</h2>
+                    <p>Мы предлагаем широкий выбор качественных порошков для стирки, мытья посуды и уборки. Найдите идеальное решение для вашего дома.</p>
+                    <a href="#catalog" class="btn">Смотреть каталог</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=0b45e9b2b52fee87f239b17d116813d1_l-8195016-images-thumbs&n=13" class="photography" alt="Порошок и чистящие средства">
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog">
+            <div class="container">
+                <h2>Каталог порошков</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://avatars.mds.yandex.net/i?id=12f7a42b44bd9136a4edca12dd2506fd_l-4599018-images-thumbs&n=13" alt="Порошок для стирки">
+                        <h3>Порошок для стирки "Свежесть"</h3>
+                        <p>Идеально подходит для всех типов тканей. Придает белью свежий аромат.</p>
+                        <span class="price">180₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                     <div class="product-card">
+                        <img src="https://akvarel-shop.ru/images/detailed/71/177552.jpg" alt="Порошок для посуды">
+                        <h3>Порошок для посуды "Блеск"</h3>
+                        <p>Безопасное и эффективное средство для мытья посуды. Легко смывается.</p>
+                        <span class="price">150₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://donetsk.sidex.ru/images_offers/1070/1070206/stiralnii_porosh_1.jpg" alt="Порошок для уборки">
+                        <h3>Порошок для уборки "Чистый дом"</h3>
+                        <p>Мощное средство для удаления самых стойких загрязнений. Подходит для разных поверхностей.</p>
+                        <span class="price">220₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://cdn.100sp.ru/pictures/239943357" alt="Отбеливающий порошок">
+                        <h3>Отбеливающий порошок "Белизна"</h3>
+                        <p>Удаляет пятна и придает белью белизну. Для всех типов белых тканей.</p>
+                        <span class="price">190₽</span>
+                        <button class="add-to-cart">Добавить в корзину</button>
+                    </div>
+                </div>
+                <a href="stest" class="view-all-btn">Смотреть все товары</a>
+            </div>
+        </section>
+
+        <section id="advantages" class="advantages">
+            <div class="container">
+                <h2>Наши преимущества</h2>
+                <div class="advantages-list">
+                    <div class="advantage">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Высокое качество</h3>
+                        <p>Мы предлагаем только проверенные и качественные порошки от надежных производителей.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-truck"></i>
+                        <h3>Быстрая доставка</h3>
+                        <p>Мы доставим ваш заказ в кратчайшие сроки в любую точку страны.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>Доступные цены</h3>
+                        <p>Мы предлагаем качественные порошки по конкурентным ценам.</p>
+                    </div>
+                      <div class="advantage">
+                        <i class="fas fa-headset"></i>
+                        <h3>Поддержка клиентов</h3>
+                        <p>Наша команда всегда готова ответить на ваши вопросы и помочь с выбором.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contact-info">
+                <p>Свяжитесь с нами, если у вас есть вопросы:</p>
+                        <div><i class="fas fa-envelope"></i> Email: <a href="mailto:info@powderstore.com">info@powderstore.com</a></div>
+                        <div><i class="fas fa-phone"></i> Телефон: <a href="tel:+71234567890">+7 (123) 456-78-90</a></div>
+                         <div><i class="fas fa-map-marker-alt"></i> Адрес: г. Москва, ул. Примерная, д. 1</div>
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Магазин Порошков</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
